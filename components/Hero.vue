@@ -59,7 +59,7 @@ export default {
       scrollDefault: 50,
       textColor: 'white--text',
       color: 'transparent',
-      logo: '/logo-dark.png',
+      logo: '/diego-saravia-mamani//logo-dark.png',
       flat: true,
       drawer: null
     }
@@ -69,12 +69,12 @@ export default {
       if (this.scrollPosition < this.scrollDefault) {
         this.textColor = 'white--text'
         this.color = 'transparent'
-        this.logo = '/logo-dark.png'
+        this.logo = '/diego-saravia-mamani//logo-dark.png'
         this.flat = true
       } else {
         this.textColor = 'black--text'
         this.color = 'grey lighten-2'
-        this.logo = '/logo-light.png'
+        this.logo = '/diego-saravia-mamani//logo-light.png'
         this.flat = false
       }
     }

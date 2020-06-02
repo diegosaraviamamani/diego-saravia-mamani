@@ -2,7 +2,7 @@
   <v-app>
     <Hero />
     <v-img
-      src="/laptop.jpg"
+      src="/diego-saravia-mamani/laptop.jpg"
       max-height="100vh"
       gradient="to top right, rgba(0,0,0,.5), rgba(0,0,0,.5)"
     >

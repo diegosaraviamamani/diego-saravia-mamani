@@ -2,6 +2,9 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'spa',
+  router: {
+    base: '/diego-saravia-mamani/'
+  },
   /*
    ** Headers of the page
    */
@@ -17,7 +20,7 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/diego-saravia-mamani/favicon.png' }]
   },
   /*
    ** Customize the progress-bar color
