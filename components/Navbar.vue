@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar menup fixed dark :color="color" scroll-off-screen fade-img-on-scroll :flat="flat">
+    <v-app-bar fixed dark :color="color" scroll-off-screen :flat="flat" border="bottom">
       <v-container>
         <v-row>
           <template v-slot:img="{props}">
@@ -10,25 +10,21 @@
           <v-spacer></v-spacer>
           <v-toolbar-items class="d-none d-md-inline">
             <v-btn
+              text
+              class="link text"
               v-for="link in links"
               :key="link.id"
-              :class="textColor"
-              text
-              flat
               :href="link.href"
+              exact
             >{{ link.text }}</v-btn>
           </v-toolbar-items>
-          <v-app-bar-nav-icon
-            :class="textColor"
-            class="d-inline d-md-none"
-            @click.stop="drawer = !drawer"
-          ></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon class="d-inline d-md-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         </v-row>
       </v-container>
     </v-app-bar>
-    <v-navigation-drawer class="d-md-none" v-model="drawer" absolute temporary right>
+    <v-navigation-drawer fixed class="d-md-none" v-model="drawer" temporary right>
       <v-list>
-        <v-list-item v-for="link in links" :key="link.id" link>
+        <v-list-item v-for="link in links" :key="link.id" link :href="link.href" exact>
           <v-list-item-content>
             <v-list-item-title>{{link.text}}</v-list-item-title>
           </v-list-item-content>
@@ -46,20 +42,18 @@
 //     screen.height
 // )
 export default {
-  data() {
+  data: () => {
     return {
       links: [
         { text: 'Inicio', href: '#index' },
         { text: 'Sobre mi', href: '#about' },
-        { text: 'Conocimientos', href: '#index' },
-        { text: 'Portafolio', href: '#index' },
-        { text: 'Contactame', href: '#index' }
+        { text: 'Portafolio', href: '#portfolio' },
+        { text: 'Contactame', href: '#contact' }
       ],
       scrollPosition: null,
-      scrollDefault: 50,
-      textColor: 'white--text',
+      scrollDefault: 100,
       color: 'transparent',
-      logo: '/diego-saravia-mamani//logo-dark.png',
+      logo: '/diego-saravia-mamani/logo-dark.png',
       flat: true,
       drawer: null
     }
@@ -67,14 +61,10 @@ export default {
   watch: {
     scrollPosition(newValue) {
       if (this.scrollPosition < this.scrollDefault) {
-        this.textColor = 'white--text'
         this.color = 'transparent'
-        this.logo = '/diego-saravia-mamani//logo-dark.png'
         this.flat = true
       } else {
-        this.textColor = 'black--text'
-        this.color = 'grey lighten-2'
-        this.logo = '/diego-saravia-mamani//logo-light.png'
+        this.color = '#1D2029'
         this.flat = false
       }
     }
@@ -91,4 +81,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.link {
+  font-family: 'Quicksand', 'Roboto', sans-serif !important;
+  text-decoration: none;
+  color: white;
+}
 </style>

@@ -33,7 +33,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    'plugins/vuetify.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -46,6 +48,7 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@neneos/nuxt-hover.css',
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],

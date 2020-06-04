@@ -4,11 +4,10 @@
 // $font-size-root: 20px;
 @import '~/assets/typeface-quicksand/index.css';
 
-.v-toolbar__content {
-  padding: 0 auto !important;
-}
+$body-font-family: 'Quicksand',
+'Roboto',
+sans-serif;
 
-.v-application,
-.display-3 {
+.text {
   font-family: 'Quicksand', 'Roboto', sans-serif !important;
 }
