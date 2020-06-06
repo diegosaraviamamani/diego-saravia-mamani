@@ -1,12 +1,12 @@
 <template>
   <v-img
     src="/diego-saravia-mamani/laptop.jpg"
-    min-height="100vh"
+    height="100vh"
     gradient="to top right, rgba(0,0,0,.5), rgba(0,0,0,.5)"
   >
     <v-container id="index" fill-height>
       <v-row justify="center">
-        <v-col cols="10">
+        <v-col cols="12" md="10">
           <v-card color="transparent" class="white--text" flat>
             <v-card-title class="mt-10 mt-sm-0">
               <v-row>

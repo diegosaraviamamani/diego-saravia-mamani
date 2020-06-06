@@ -1,30 +1,37 @@
 <template>
   <v-img min-height="100vh">
-    <v-container id="about" wrap>
+    <v-container id="about" fill-height fluid>
       <v-row class="py-12" justify="center">
-        <v-col cols="12" class="text-center my-12">
-          <span class="display-2 text">SOBRE MI</span>
+        <v-col cols="12" class="text-center mb-12">
+          <Lazy>
+            <span class="display-2 text">SOBRE MI</span>
+          </Lazy>
         </v-col>
-        <v-col cols="12" md="8">
-          <v-tabs
-            v-model="tab"
-            color="primary"
-            slider-color="transparent"
-            background-color="transparent"
-            grow
-            icons-and-text
-            show-arrows
-          >
-            <v-tab v-for="item in items" :key="item.id" class="hvr-sweep-to-bottom">
-              {{item.title}}
-              <v-icon>{{item.icon}}</v-icon>
-            </v-tab>
-            <v-tab-item v-for="item in items" :key="item.id">
-              <v-card flat>
-                <v-card-text class="mx-auto text-center">{{item.content}}</v-card-text>
-              </v-card>
-            </v-tab-item>
-          </v-tabs>
+        <v-col cols="12" md="8" lg="6">
+          <Lazy>
+            <v-tabs
+              v-model="tab"
+              color="blue accent-4"
+              background-color="transparent"
+              slider-color="transparent"
+              icons-and-text
+              show-arrows
+              centered
+            >
+              <v-tab v-for="item in items" :key="item.id" class="hvr-sweep-to-bottom">
+                {{item.title}}
+                <v-icon>{{item.icon}}</v-icon>
+              </v-tab>
+              <v-tab-item v-for="item in items" :key="item.id">
+                <v-card flat>
+                  <v-card-text
+                    transition="fade-transition"
+                    class="mx-auto text-center black--text"
+                  >{{item.content}}</v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs>
+          </Lazy>
         </v-col>
       </v-row>
     </v-container>
@@ -32,7 +39,11 @@
 </template>
 
 <script>
+import Lazy from './utils/Lazy'
 export default {
+  components: {
+    Lazy
+  },
   data() {
     return {
       tab: null,
@@ -74,7 +85,7 @@ export default {
 .text::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -5px;
   left: 0;
   right: 0;
   margin: auto;
